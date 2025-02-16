@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Notebooks
+.ipynb_checkpoints
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Local development
+*.log
+.DS_Store
