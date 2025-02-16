@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    image: arangodb:3.10
+    environment:
+      - ARANGO_ROOT_PASSWORD=root
+    ports:
+      - "8529:8529"
+    volumes:
+      - arangodb_data:/var/lib/arangodb3
+
+volumes:
+  arangodb_data:
